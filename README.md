@@ -28,8 +28,8 @@ FOR WINDOWS
 
 
 -----------
-|ATTENTION
-|On windows you will read that the "clear" command is not knwon, that's right, don't worry the programm will work, the |command work only on linux and it is only for text formatting (the command is "on.system("clear"))
+|ATTENTION|
+On windows you will read that the "clear" command is not knwon, that's right, don't worry the programm will work, the command work only on linux and it is only for text formatting (the command is "on.system("clear"))
 --------------------------------------------------------------------------------------------------------------------
 
 |----------|
