@@ -28,4 +28,4 @@ FOR WINDOWS
 
 |DISCLAIMER|
 |----------|
-This script is only for educational purpose, downloading YouTube video is AGAINST the YouTube's terms. I hope you will understand python better with this simple script (if you are new like me, unless maybe you will cry seeing this code idk ;) ), I personally learned a lot trying to create it since i'm new on python, as you can se my previous project was in c++
+This script is only for educational purpose, downloading YouTube video is AGAINST the YouTube's terms. I do not take any responsibility for your usage.
