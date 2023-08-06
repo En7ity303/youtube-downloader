@@ -2,6 +2,9 @@ from pytube import YouTube
 import os
 from sys import platform
 
+#This sofwtare is for EDUCATIONA PURSPOSE ONLY, the autho do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
+
+
 def space():
     for i in range(5):
         print("\n")
@@ -18,10 +21,11 @@ def Download(link):
         ext=str(input("\nChoose what to download:\n>mp3<\n>mp4<\n\n"))
 
     flag=False
+    destination='.'
+
     video = YouTube(link)
-#   Download as mp3
+#Download as mp3
     if ext=='mp3':
-        destination='.'
         video=video.streams.get_audio_only()
         print("Attempting to download: '"+video.title+".mp3'")
 
@@ -44,12 +48,17 @@ def Download(link):
 
 #   download as mp4
     else:
+#       the following line is to allow you to save the file in a different directory
+#       destination=str(input("")) or ('.')
+
         video = video.streams.get_highest_resolution()
         print("Attempting to download: '"+video.title+".mp4'")
         try:
-            video.download()
+            out_file=video.download(output_path=destination)
+            base, ext=os.path.splitext(out_file)
+            new_file=base+'.mp4'
+            os.rename(out_file, new_file)
             clear()
-
         except:
             print("An error has occurred")
             flag=True
