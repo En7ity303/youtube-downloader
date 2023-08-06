@@ -5,7 +5,7 @@ This is a python script which dowload youtube video as mp3 or mp4
 FOR LINUX (ubunut debian based, for everyone else you need to change the package manager name)
 1) You need to install python3 (sudo apt install python3) and python 3 pip (sudo apt install python3-pip) and install python venv (sudo apt install python3-venv)
 
-2) Now you should create a dyrectory wich will have the python script directory, the venv directory (python virtual environment which we will create after) and the pytube library directory
+2) Now you should create a dyrectory which will have the python script directory, the venv directory (python virtual environment which we will create after) and the pytube library directory
 
 3)  Now you need to create the virtual environment for python (python3 -m venv "put here the dyrectory location")
 
