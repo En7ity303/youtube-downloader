@@ -1,10 +1,16 @@
 from pytube import YouTube
 import os
+from sys import platform
 
 def space():
     for i in range(5):
         print("\n")
 
+def clear():
+    if platform=="linux" or platform=="linux2":
+            os.system("clear")
+    elif platform=="win32":
+            os.system("cls")
 
 def Download(link):
     ext='.'
@@ -12,37 +18,38 @@ def Download(link):
         ext=str(input("\nChoose what to download:\n>mp3<\n>mp4<\n\n"))
 
     flag=False
+    video = YouTube(link)
 #   Download as mp3
     if ext=='mp3':
-        videomp3 = YouTube(link)
-        videomp3 = videomp3.streams.get_audio_only()
-        print("Attempting to download: '"+videomp3.title+".mp3'")
+        destination='.'
+        video=video.streams.get_audio_only()
+        print("Attempting to download: '"+video.title+".mp3'")
 
 #       the following line is to allow you to save the file in a different directory
 #       destination=str(input("")) or ('.')
 
-        destination='.'
-
         try:
-            out_file = videomp3.download(output_path=destination)
-            base, ext = os.path.splitext(out_file)
-            new_file = base + '.mp3'
+            out_file=video.download(output_path=destination)
+            base, ext=os.path.splitext(out_file)
+            new_file=base+'.mp3'
             os.rename(out_file, new_file)
-            os.system("clear")
+            clear()
         except:
             print("An error has occurred")
             flag=True
 
         if flag!=True:
             print("Download is completed successfully")
+
+
 #   download as mp4
     else:
-        videomp4 = YouTube(link)
-        videomp4 = videomp4.streams.get_highest_resolution()
-        print("Attempting to download: '"+videomp4.title+".mp4'")
+        video = video.streams.get_highest_resolution()
+        print("Attempting to download: '"+video.title+".mp4'")
         try:
-            videomp4.download()
-            os.system("clear")
+            video.download()
+            clear()
+
         except:
             print("An error has occurred")
             flag=True
@@ -50,15 +57,16 @@ def Download(link):
             print("Download is completed successfully")
 
 
+
+
 while True:
-    os.system("clear")
+    clear()
     link = input("Enter the YouTube video URL: ")
     Download(link)
     answer=str(input("\nDo you wanna download other file?\n"))
     if answer=='nope' or answer=='no' or answer=='NO' or answer=='Nope':
         break;
-    os.system("clear")
-
+    clear()
 
 
 input("Have a nice day!")
