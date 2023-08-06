@@ -28,4 +28,4 @@ FOR WINDOWS
 
 |DISCLAIMER|
 |----------|
-This script is only for educational purpose, downloading YouTube video is AGAINST the YouTube's terms. I do not take any responsibility for your usage.
+This script is only for educational purpose, downloading YouTube video is AGAINST copyright and YouTube's terms. I do not take any responsibility for your usage.
