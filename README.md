@@ -16,7 +16,6 @@ FOR LINUX (ubunut debian based, for everyone else you need to change the package
 6) now you need to install the pytube library on the python venv, go with your terminal in the pytube directory and use the command "python3 -m pip install ."
 
 7) now you are ready to execute the python script, go with you terminal in the python script directory and execute it (python3 main.py)
-------------
 
 
 ------------
