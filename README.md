@@ -1,6 +1,13 @@
 # youtube-downloader
 This is a python script which dowload youtube video as mp3 or mp4
 
+
+------------
+|DISCLAIMER|
+------------
+This script is only for educational purpose, downloading YouTube video is AGAINST copyright and YouTube's terms. I do not take any responsibility for your usage.
+
+
 ------------
 FOR LINUX (ubunut debian based, for everyone else you need to change the package manager name)
 1) You need to install python3 (sudo apt install python3) and python 3 pip (sudo apt install python3-pip) and install python venv (sudo apt install python3-venv)
@@ -26,6 +33,4 @@ FOR WINDOWS
 ------------
 
 
-|DISCLAIMER|
-|----------|
-This script is only for educational purpose, downloading YouTube video is AGAINST copyright and YouTube's terms. I do not take any responsibility for your usage.
+
