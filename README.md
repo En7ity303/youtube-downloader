@@ -11,9 +11,9 @@ FOR LINUX (ubunut debian based, for everyone else you need to change the package
 
 4) Now you need to git clone the pytube library code in its directory (git clone https://github.com/pytube/pytube.git)
 
-5) Now you need to activate the python virtual  environment (source "put here the venv dyrectori location"/bin/activate)
+5) Now you need to activate the python virtual  environment (source "put here the venv directory location"/bin/activate)
 
-6) now you need to install the pytube library on the python venv, got with your terminal in the pytube directory and use the command "python3 -m pip install ."
+6) now you need to install the pytube library on the python venv, go with your terminal in the pytube directory and use the command "python3 -m pip install ."
 
 7) now you are ready to execute the python script, go with you terminal in the python script directory and execute it (python3 main.py)
 ------------
