@@ -90,6 +90,6 @@ while True:
     clear()
 
 
-input("Have a nice day!")
+input(txtcolors.warn+"\n\nHave a nice day!"+txtcolors.reset)
 clear()
 
