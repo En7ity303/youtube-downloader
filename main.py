@@ -2,6 +2,7 @@ from pytube import YouTube
 import os
 from sys import platform
 
+destination="."
 #This sofwtare is for EDUCATIONA PURSPOSE ONLY, the autho do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
 class txtcolors:
@@ -17,65 +18,72 @@ def clear():
     elif platform=="win32":
             os.system("cls")
 
-def Download(link):
-    ext='.'
-    while(ext!='mp3' and ext!='mp4'):
-        ext=str(input("\nChoose what to download:\n>mp3<\n>mp4<\n\n"))
+def Downloadmp3(video):
 
     flag=False
-    destination='.'
 
-    video = YouTube(link)
-#      Download as mp3
-    if ext=='mp3':
-        video=video.streams.get_audio_only()
-        print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp3'"+txtcolors.reset)
+    video=video.streams.get_audio_only()
 
-#       the following line is to allow you to save the file in a different directory
-#       destination=str(input("")) or ('.')
+    print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp3'"+txtcolors.reset)
+#    the following line is to allow you to save the file in a different directory
+#    destination=str(input("")) or ('.')
+    try:
+        out_file=video.download(output_path=destination)
+        base, ext=os.path.splitext(out_file)
+        new_file=base+'.mp3'
+        os.rename(out_file, new_file)
+        clear()
+    except:
+        print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
+        flag=True
 
-        try:
-            out_file=video.download(output_path=destination)
-            base, ext=os.path.splitext(out_file)
-            new_file=base+'.mp3'
-            os.rename(out_file, new_file)
-            clear()
-        except:
-            print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
-            flag=True
+    if flag!=True:
+        print(txtcolors.ok+"************************************")
+        print("*Download is completed successfully*")
+        print("************************************"+txtcolors.reset)
 
-        if flag!=True:
-            print(txtcolors.ok+"************************************")
-            print("*Download is completed successfully*")
-            print("************************************"+txtcolors.reset)
 
-#   download as mp4
-    else:
-#       the following line is to allow you to save the file in a different directory
-#       destination=str(input("")) or ('.')
+def Downloadmp4(video):
+    flag=False
 
-        video = video.streams.get_highest_resolution()
-        print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp4'"+txtcolors.reset+)
-        try:
-            out_file=video.download(output_path=destination)
-            base, ext=os.path.splitext(out_file)
-            new_file=base+'.mp4'
-            os.rename(out_file, new_file)
-            clear()
-        except:
-            print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
-            flag=True
-        if flag==False:
-            print(txtcolors.ok+"************************************")
-            print("*Download is completed successfully*")
-            print("************************************"+txtcolors.reset)
+    video=video.streams.get_highest_resolution()
+
+    print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp4'"+txtcolors.reset)
+
+#    the following line is to allow you to save the file in a different directory
+#    destination=str(input("")) or ('.')
+    try:
+        out_file=video.download(output_path=destination)
+        base, ext=os.path.splitext(out_file)
+        new_file=base+'.mp4'
+        os.rename(out_file, new_file)
+        clear()
+    except:
+        print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
+        flag=True
+
+    if flag==False:
+        print(txtcolors.ok+"************************************")
+        print("*Download is completed successfully*")
+        print("************************************"+txtcolors.reset)
 
 
 
 while True:
     clear()
-    link = input("Enter the YouTube video URL: ")
-    Download(link)
+    link=input("Enter the YouTube video URL: ")
+    video=YouTube(link)
+
+    ext='.'
+    while(ext!='mp3' and ext!='mp4'):
+        ext=str(input("\nChoose what to download:\n>mp3<\n>mp4<\n\n"))
+
+    if ext=="mp3":
+        Downloadmp3(video)
+    else:
+        Downloadmp4(video)
+
+
     answer=str(input("\nDo you wanna download another file?\n"))
     if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope':
         break;
@@ -84,3 +92,4 @@ while True:
 
 input("Have a nice day!")
 clear()
+
