@@ -6,13 +6,23 @@ from sys import platform
 destination="."
 list=[]
 
-#This sofwtare is for EDUCATIONAl PURSPOSE ONLY, the autho do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
+#This sofwtare is for EDUCATIONAL PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
 class txtcolors:
     ok='\033[92m'       #green
     fail='\033[91m'     #red
     reset='\033[0m'     #reset
     warn='\033[93m'     #yellow
+    header='\033[95m'   #purple
+    cyan='\033[96m'     #cyan
+
+def welcome():
+
+    resp=str(input(txtcolors.warn+"\n\nDownloading YouTube video is against copyright and YouTube terms, do you wanna continue? If go ahead the author do not take any responsibility for your usage\n\n>"+txtcolors.reset))
+
+    if resp!="yes" and resp!="Yes":
+        quit()
+
 
 def toterr():
     num=0
@@ -34,7 +44,7 @@ def pl():
     p=Playlist(input("Enter Youtube playlist URL: "))
     y="."
     while y!="mp3" and y!="mp4":
-        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n"))
+        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n>"))
 
     clear()
     if y=="mp3":
@@ -52,7 +62,7 @@ def video():
 
     ext='.'
     while(ext!='mp3' and ext!='mp4'):
-        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n"))
+        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>"))
 
     clear()
     if ext=="mp3":
@@ -114,12 +124,13 @@ def Downloadmp4(video):
 
 
 
+welcome()
+print(txtcolors.header+"Welcome in YouTube Downloader\n\n\n"+txtcolors.reset)
 while True:
     clear()
-
     x="."
     while x!="video" and x!="playlist" and x!="Video" and x!= "Playlist" and x!="pl":
-        x=str(input("Do you wanna download a video or a playlist?"))
+        x=str(input("Do you wanna download a video or a playlist?\n>"))
 
     clear()
     if x=="video" or x=="Video":
@@ -128,11 +139,12 @@ while True:
     else:
         pl()
 
-    clear()
-    toterr()
+    if x!="Video" and x!="video":
+        clear()
+        toterr()
 
-    answer=str(input("\nDo you wanna download another file?\n"))
-    if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope':
+    answer=str(input("\nDo you wanna download another file?\n>"))
+    if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope' or answer=="nop":
         break;
     clear()
 
