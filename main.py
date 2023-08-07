@@ -4,10 +4,12 @@ from sys import platform
 
 #This sofwtare is for EDUCATIONA PURSPOSE ONLY, the autho do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
+class txtcolors:
+    ok='\033[92m'       #green
+    fail='\033[91m'     #red
+    reset='\033[0m'     #reset
+    warn='\033[93m'     #yellow
 
-def space():
-    for i in range(5):
-        print("\n")
 
 def clear():
     if platform=="linux" or platform=="linux2":
@@ -24,10 +26,10 @@ def Download(link):
     destination='.'
 
     video = YouTube(link)
-#Download as mp3
+#      Download as mp3
     if ext=='mp3':
         video=video.streams.get_audio_only()
-        print("Attempting to download: '"+video.title+".mp3'")
+        print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp3'"+txtcolors.reset)
 
 #       the following line is to allow you to save the file in a different directory
 #       destination=str(input("")) or ('.')
@@ -39,12 +41,13 @@ def Download(link):
             os.rename(out_file, new_file)
             clear()
         except:
-            print("An error has occurred")
+            print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
             flag=True
 
         if flag!=True:
-            print("Download is completed successfully")
-
+            print(txtcolors.ok+"************************************")
+            print("*Download is completed successfully*")
+            print("************************************"+txtcolors.reset)
 
 #   download as mp4
     else:
@@ -52,7 +55,7 @@ def Download(link):
 #       destination=str(input("")) or ('.')
 
         video = video.streams.get_highest_resolution()
-        print("Attempting to download: '"+video.title+".mp4'")
+        print(txtcolors.warn+"\nAttempting to download: '"+video.title+".mp4'"+txtcolors.reset+)
         try:
             out_file=video.download(output_path=destination)
             base, ext=os.path.splitext(out_file)
@@ -60,11 +63,12 @@ def Download(link):
             os.rename(out_file, new_file)
             clear()
         except:
-            print("An error has occurred")
+            print(txtcolors.fail+"An error has occurred"+txtcolors.reset)
             flag=True
         if flag==False:
-            print("Download is completed successfully")
-
+            print(txtcolors.ok+"************************************")
+            print("*Download is completed successfully*")
+            print("************************************"+txtcolors.reset)
 
 
 
@@ -72,10 +76,11 @@ while True:
     clear()
     link = input("Enter the YouTube video URL: ")
     Download(link)
-    answer=str(input("\nDo you wanna download other file?\n"))
-    if answer=='nope' or answer=='no' or answer=='NO' or answer=='Nope':
+    answer=str(input("\nDo you wanna download another file?\n"))
+    if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope':
         break;
     clear()
 
 
 input("Have a nice day!")
+clear()
