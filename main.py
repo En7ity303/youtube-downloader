@@ -6,7 +6,7 @@ from sys import platform
 destination="."
 list=[]
 
-#This sofwtare is for EDUCATIONAL PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
+#This sofwtare is for EDUCATIONAl PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
 class txtcolors:
     ok='\033[92m'       #green
@@ -44,32 +44,37 @@ def pl():
     p=Playlist(input("Enter Youtube playlist URL: "))
     y="."
     while y!="mp3" and y!="mp4":
-        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n>"))
+        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n>Car radio enanched<\n\n>"))
 
     clear()
     if y=="mp3":
         for url in p.video_urls:
             video=YouTube(url)
             Downloadmp3(video)
-    else:
+    if y=="mp4":
         for url in p.video_urls:
             video=YouTube(url)
             Downloadmp4(video)
+    else:
+        for url in p.video_urls:
+            video=YouTube(url)
+            carenan(video)
 
 def video():
     link=input("Enter the YouTube video URL: ")
     video=YouTube(link)
 
     ext='.'
-    while(ext!='mp3' and ext!='mp4'):
-        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>"))
+    while(ext!='mp3' and ext!='mp4' and ext!='car radio enanched' and ext!="Car radio enanched" and ext!="1" and ext!="2" and ext!="3"):
+        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n>Car radio enanched<\n\n>"))
 
     clear()
     if ext=="mp3":
         Downloadmp3(video)
-    else:
+    if ext=="mp4":
         Downloadmp4(video)
-
+    else:
+        carenan(video)
 
 def Downloadmp3(video):
 
@@ -122,24 +127,45 @@ def Downloadmp4(video):
         print(txtcolors.ok+"Download of: '"+video.title+"' is completed successfully"+txtcolors.reset+"\n")
 #        print("************************************"+txtcolors.reset)
 
+def carenan(video):
+    flag=False
+    video=video.streams.get_audio_only()
 
+    print(txtcolors.warn+"Attempting to download: '"+video.title+".mp4'"+txtcolors.reset)
+
+#    the following line is to allow you to save the file in a different directory
+#    destination=str(input("")) or ('.')
+    try:
+        out_file=video.download(output_path=destination)
+        base, ext=os.path.splitext(out_file)
+        new_file=base+'.mp4'
+        os.rename(out_file, new_file)
+        clear()
+    except:
+        print(txtcolors.fail+"An error has occurred, download of: '"+video.title+"' has failed"+txtcolors.reset)
+        list.insert(0, video.title)
+        flag=True
+
+    if flag==False:
+        print(txtcolors.ok+"Download of: '"+video.title+"' is completed successfully"+txtcolors.reset+"\n")
 
 welcome()
 print(txtcolors.header+"Welcome in YouTube Downloader\n\n\n"+txtcolors.reset)
+pl=False
 while True:
     clear()
     x="."
-    while x!="video" and x!="playlist" and x!="Video" and x!= "Playlist" and x!="pl":
-        x=str(input("Do you wanna download a video or a playlist?\n>"))
-
+    while x!="video" and x!="playlist" and x!="Video" and x!= "Playlist" and x!="pl" and x!="vd" and x!="1" and x!="2":
+        x=str(input("Choose the format you wanna download:\n>Video<\n>Playlist<\n\n>"))
     clear()
-    if x=="video" or x=="Video":
-
+    if x=="video" or x=="Video" or x=="vd" or x=="1":
         video()
-    else:
+    if x=="Playlist" or x=="playlist" or x=="pl" or x=="2":
         pl()
+        pl=True
 
-    if x!="Video" and x!="video":
+
+    if pl==True:
         clear()
         toterr()
 
