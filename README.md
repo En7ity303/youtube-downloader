@@ -10,7 +10,7 @@ This script is only for educational purpose, downloading YouTube video is AGAINS
 ---
 Attention
 ---
-If you wanna use the mp3 file in a car radio you actually need to download the mp4 and convert it in mp3 with an online converter, I suggest anyconv but of course you can use whatever you want. I'm trying to make a built-in converter
+If you wanna use the mp3 file in a car radio you actually need to download the car radio enanched when you select the file format type; it will download an only audio mp4 wich can be easily converter in mp3 by online converter, since the mp3 format downloaded won't work for car radio. I personally use Anyconv.com it works well, obviously you can use whatever converter you want
 
 ------------
 FOR LINUX (ubunut debian based, for everyone else you need to change the package manager name)
