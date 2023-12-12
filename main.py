@@ -35,7 +35,7 @@ def toterr():
         print(txtcolors.reset)
 
 def clear():
-    if platform=="linux" or platform=="linux2":
+    if platform=="linux" or platform=="linux2" or platform=="darwin":
             os.system("clear")
     elif platform=="win32":
             os.system("cls")
