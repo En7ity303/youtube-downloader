@@ -2,7 +2,7 @@ from pytube import YouTube
 from pytube import Playlist
 import os
 from sys import platform
-
+from pydub import *
 destination="."
 list=[]
 
@@ -18,11 +18,10 @@ class txtcolors:
 
 def welcome():
 
-    resp=str(input(txtcolors.warn+"\n\nDownloading YouTube video is against copyright and YouTube terms, do you wanna continue? If go ahead the author do not take any responsibility for your usage\n\n>"+txtcolors.reset))
+    resp=str(input(txtcolors.warn+"\n\nDownloading YouTube video is against copyright and YouTube terms, do you wanna continue? If go ahead the author do not take any responsibility for your usage\n\n>>"+txtcolors.reset))
 
     if resp!="yes" and resp!="Yes":
         quit()
-
 
 def toterr():
     num=0
@@ -44,7 +43,7 @@ def pl():
     p=Playlist(input("Enter Youtube playlist URL: "))
     y="."
     while y!="mp3" and y!="mp4":
-        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n>Car radio enanched<\n\n>"))
+        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n>>"))
 
     clear()
     if y=="mp3":
@@ -55,10 +54,6 @@ def pl():
         for url in p.video_urls:
             video=YouTube(url)
             Downloadmp4(video)
-    else:
-        for url in p.video_urls:
-            video=YouTube(url)
-            carenan(video)
 
 def video():
     link=input("Enter the YouTube video URL: ")
@@ -66,15 +61,18 @@ def video():
 
     ext='.'
     while(ext!='mp3' and ext!='mp4' and ext!='car radio enanched' and ext!="Car radio enanched" and ext!="1" and ext!="2" and ext!="3"):
-        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n>Car radio enanched<\n\n>"))
+        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>>"))
 
     clear()
     if ext=="mp3":
         Downloadmp3(video)
     if ext=="mp4":
         Downloadmp4(video)
-    else:
-        carenan(video)
+
+def convert(toconvert, path):
+    video=AudioSegment.from_file(toconvert, format="mp4")
+    video.export(path, format="mp3")
+    
 
 def Downloadmp3(video):
 
@@ -88,8 +86,11 @@ def Downloadmp3(video):
     try:
         out_file=video.download(output_path=destination)
         base, ext=os.path.splitext(out_file)
-        new_file=base+'.mp3'
+        new_file=base+'.mp4'
+        mp3path=base+'.mp3'
         os.rename(out_file, new_file)
+        print("NANANAN")
+        convert(new_file, mp3path)
         clear()
     except:
         print(txtcolors.fail+"An error has occurred, download of: '"+video.title+"' has failed"+txtcolors.reset)
@@ -127,27 +128,6 @@ def Downloadmp4(video):
         print(txtcolors.ok+"Download of: '"+video.title+"' is completed successfully"+txtcolors.reset+"\n")
 #        print("************************************"+txtcolors.reset)
 
-def carenan(video):
-    flag=False
-    video=video.streams.get_audio_only()
-
-    print(txtcolors.warn+"Attempting to download: '"+video.title+".mp4'"+txtcolors.reset)
-
-#    the following line is to allow you to save the file in a different directory
-#    destination=str(input("")) or ('.')
-    try:
-        out_file=video.download(output_path=destination)
-        base, ext=os.path.splitext(out_file)
-        new_file=base+'.mp4'
-        os.rename(out_file, new_file)
-        clear()
-    except:
-        print(txtcolors.fail+"An error has occurred, download of: '"+video.title+"' has failed"+txtcolors.reset)
-        list.insert(0, video.title)
-        flag=True
-
-    if flag==False:
-        print(txtcolors.ok+"Download of: '"+video.title+"' is completed successfully"+txtcolors.reset+"\n")
 
 welcome()
 print(txtcolors.header+"Welcome in YouTube Downloader\n\n\n"+txtcolors.reset)
@@ -156,7 +136,7 @@ while True:
     clear()
     x="."
     while x!="video" and x!="playlist" and x!="Video" and x!= "Playlist" and x!="pl" and x!="vd" and x!="1" and x!="2":
-        x=str(input("Choose the format you wanna download:\n>Video<\n>Playlist<\n\n>"))
+        x=str(input("Choose the format you wanna download:\n>Video<\n>Playlist<\n\n>>"))
     clear()
     if x=="video" or x=="Video" or x=="vd" or x=="1":
         video()
@@ -169,7 +149,7 @@ while True:
         clear()
         toterr()
 
-    answer=str(input("\nDo you wanna download another file?\n>"))
+    answer=str(input("\nDo you wanna download another file?\n>>"))
     if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope' or answer=="nop":
         break;
     clear()
