@@ -35,5 +35,5 @@ FOR LINUX (ubunut debian based, for everyone else you need to change the package
 FOR WINDOWS
 1) You have to install python 3, you can install it by the microsoft store
 1) You need to install pytube and pydub, open the cmd as administrator and put the command "pip install pytube pydube"
-2) Now you are ready to execute the python script
+2) Now download the main.py file for the repository and you are ready to execute the python script
 ------------
