@@ -7,10 +7,10 @@ This is a python script which dowload youtube video as mp3 or mp4
 ------------
 This script is only for educational purpose, downloading YouTube video is AGAINST copyright and YouTube's terms. I do not take any responsibility for your usage.
 
----
-Attention
----
-If you wanna use the mp3 file in a car radio you actually need to download the car radio enanched when you select the file format type; it will download an only audio mp4 wich can be easily converter in mp3 by online converter, since the mp3 format downloaded won't work for car radio. I personally use Anyconv.com it works well, obviously you can use whatever converter you want
+|ATTENTION|
+This script is usable with python 3.9.x 
+If you have a newer version you can use pyenv to create a python venv with older pythons's versions
+
 
 ------------
 FOR LINUX (ubunut debian based, for everyone else you need to change the package manager name)
@@ -32,9 +32,6 @@ FOR LINUX (ubunut debian based, for everyone else you need to change the package
 ------------
 FOR WINDOWS
 1) You have to install python 3, you can install it by the microsoft store
-1) You need to install pytube library, open the cmd as administrator and put the command "pip install pytube"
+1) You need to install pytube and pydub, open the cmd as administrator and put the command "pip install pytube pydube"
 2) Now you are ready to execute the python script
 ------------
-
-
-
