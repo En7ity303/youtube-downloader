@@ -22,7 +22,8 @@ def welcome():
 
     if resp!="yes" and resp!="Yes":
         quit()
-
+        
+#printing total error while downloading
 def toterr():
     num=0
     print("The number of error is: "+txtcolors.fail+str(len(list))+txtcolors.reset)
@@ -60,13 +61,13 @@ def video():
     video=YouTube(link)
 
     ext='.'
-    while(ext!='mp3' and ext!='mp4' and ext!='car radio enanched' and ext!="Car radio enanched" and ext!="1" and ext!="2" and ext!="3"):
+    while(ext!="mp3" and ext!="mp4" and ext!="1" and ext!="2"):
         ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>>"))
 
     clear()
-    if ext=="mp3":
+    if ext=="mp3" or ext == "1":
         Downloadmp3(video)
-    if ext=="mp4":
+    if ext=="mp4" or ext=="2":
         Downloadmp4(video)
 
 def convert(toconvert, path):
@@ -84,20 +85,20 @@ def Downloadmp3(video):
 #    the following line is to allow you to save the file in a different directory
 #    destination=str(input("")) or ('.')
     try:
-        out_file=video.download(output_path=destination)
+        out_file=video.download(output_path=destination)        #download the video
         base, ext=os.path.splitext(out_file)
-        new_file=base+'.mp4'
-        mp3path=base+'.mp3'
+        new_file=base+'.mp4'                                    #this is the mp4 file path
+        mp3path=base+'.mp3'                                     #this is the mp3 file path
         os.rename(out_file, new_file)
-        print("NANANAN")
-        convert(new_file, mp3path)
+        convert(new_file, mp3path)                              #this is needed to convert the file from mp4 to mp3
+        os.remove(new_file)                                     #this one delete the mp4 file
         clear()
     except:
         print(txtcolors.fail+"An error has occurred, download of: '"+video.title+"' has failed"+txtcolors.reset)
         list.insert(0, video.title)
         flag=True
 
-    if flag!=True:
+    if flag==False:
    #     print(txtcolors.ok+"************************************")
         print(txtcolors.ok+"Download of: '"+video.title+"' is completed successfully"+txtcolors.reset+"\n")
  #       print("************************************"+txtcolors.reset)
@@ -143,7 +144,6 @@ while True:
     if x=="Playlist" or x=="playlist" or x=="pl" or x=="2":
         pl()
         pl=True
-
 
     if pl==True:
         clear()
