@@ -132,7 +132,7 @@ def Downloadmp4(video):
 
 welcome()
 print(txtcolors.header+"Welcome in YouTube Downloader\n\n\n"+txtcolors.reset)
-pl=False
+flag_pl=False
 while True:
     clear()
     x="."
@@ -143,9 +143,9 @@ while True:
         video()
     if x=="Playlist" or x=="playlist" or x=="pl" or x=="2":
         pl()
-        pl=True
+        flag_pl=True
 
-    if pl==True:
+    if flag_pl==True:
         clear()
         toterr()
 
