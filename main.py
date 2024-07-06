@@ -3,7 +3,8 @@ from pytube import Playlist
 import os
 from sys import platform
 from pydub import *
-destination="."
+
+destination="/Users/giorgio/documents/coding/script/musica"
 list=[]
 
 #This sofwtare is for EDUCATIONAl PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
@@ -18,7 +19,7 @@ class txtcolors:
 
 def welcome():
 
-    resp=str(input(txtcolors.warn+"\n\nDownloading YouTube video is against copyright and YouTube terms, do you wanna continue? If go ahead the author do not take any responsibility for your usage\n\n>>"+txtcolors.reset))
+    resp=str(input(txtcolors.warn+"\n\nDownloading YouTube video is against copyright and YouTube terms, do you wanna continue? If go ahead the author do not take any responsibility for your usage\n\n>>>"+txtcolors.reset))
 
     if resp!="yes" and resp!="Yes":
         quit()
@@ -41,10 +42,10 @@ def clear():
             os.system("cls")
 
 def pl():
-    p=Playlist(input("Enter Youtube playlist URL: "))
+    p=Playlist(input("Enter Youtube playlist URL: \n>>>"))
     y="."
     while y!="mp3" and y!="mp4":
-        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n>>"))
+        y=str(input("Choose how to download:\n>mp3<\n>mp4<\n\n>>>"))
 
     clear()
     if y=="mp3":
@@ -57,15 +58,15 @@ def pl():
             Downloadmp4(video)
 
 def video():
-    link=input("Enter the YouTube video URL: ")
+    link=input("Enter the YouTube video URL: \n>>>")
     video=YouTube(link)
 
     ext='.'
     while(ext!="mp3" and ext!="mp4" and ext!="1" and ext!="2"):
-        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>>"))
+        ext=str(input("\nChoose how to download:\n>mp3<\n>mp4<\n\n>>>"))
 
     clear()
-    if ext=="mp3" or ext == "1":
+    if ext=="mp3" or ext=="1":
         Downloadmp3(video)
     if ext=="mp4" or ext=="2":
         Downloadmp4(video)
@@ -78,13 +79,12 @@ def convert(toconvert, path):
 def Downloadmp3(video):
 
     flag=False
-
-    video=video.streams.get_audio_only()
-
     print(txtcolors.warn+"Attempting to download: '"+video.title+".mp3'"+txtcolors.reset)
+
 #    the following line is to allow you to save the file in a different directory
 #    destination=str(input("")) or ('.')
     try:
+        video=video.streams.get_audio_only()
         out_file=video.download(output_path=destination)        #download the video
         base, ext=os.path.splitext(out_file)
         new_file=base+'.mp4'                                    #this is the mp4 file path
@@ -106,14 +106,12 @@ def Downloadmp3(video):
 
 def Downloadmp4(video):
     flag=False
-
-    video=video.streams.get_highest_resolution()
-
     print(txtcolors.warn+"Attempting to download: '"+video.title+".mp4'"+txtcolors.reset)
 
 #    the following line is to allow you to save the file in a different directory
 #    destination=str(input("")) or ('.')
     try:
+        video=video.streams.get_highest_resolution()
         out_file=video.download(output_path=destination)
         base, ext=os.path.splitext(out_file)
         new_file=base+'.mp4'
@@ -137,10 +135,17 @@ while True:
     clear()
     x="."
     while x!="video" and x!="playlist" and x!="Video" and x!= "Playlist" and x!="pl" and x!="vd" and x!="1" and x!="2":
-        x=str(input("Choose the format you wanna download:\n>Video<\n>Playlist<\n\n>>"))
+        x=str(input("Choose the format you wanna download:\n>Video<\n>Playlist<\n\n>>>"))
     clear()
-    if x=="video" or x=="Video" or x=="vd" or x=="1":
-        video()
+    
+    while True:
+        if x=="video" or x=="Video" or x=="vd" or x=="1":
+            video()
+            ans=input("\nDo you wanna download another video?\n>>>")
+            if ans=='nope' or ans=='no' or ans=='No' or ans=='Nope' or ans=='nop':
+                break
+            clear()
+    
     if x=="Playlist" or x=="playlist" or x=="pl" or x=="2":
         pl()
         flag_pl=True
@@ -149,9 +154,7 @@ while True:
         clear()
         toterr()
 
-    answer=str(input("\nDo you wanna download another file?\n>>"))
-    if answer=='nope' or answer=='no' or answer=='No' or answer=='Nope' or answer=="nop":
-        break;
+    break
     clear()
 
 
