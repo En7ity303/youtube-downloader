@@ -1,7 +1,10 @@
 # Youtube Downloader ![Youtube](https://cms.autocarpro.in/images/youtube-logo.png)
+![Python 3.8.10=>](https://img.shields.io/badge/Python-3.8.10%3E-green)
 ![Python3.9.x](https://img.shields.io/badge/Python-3.9.X-green)
 ![Python3.10.x](https://img.shields.io/badge/Python-3.10.x-green)
 ![python 3.11.x](https://img.shields.io/badge/Python-3.11.x-green)
+
+![Phyton 3.8.9<](https://img.shields.io/badge/Python-3.8.9%3C-red)
 ![python 3.12.x](https://img.shields.io/badge/Python-3.12.x-orange)
 
 
