@@ -1,17 +1,16 @@
-# youtube-downloader
-This is a python script which dowload youtube video as mp3 or mp4
+# Youtube Downloader ![Youtube](https://cms.autocarpro.in/images/youtube-logo.png)
+![Python3.9.x](https://img.shields.io/badge/Python-3.9.X-green)
+![python 3.11.8](https://img.shields.io/badge/Python-3.11.8-green)
 
+This is a python script which download youtube video and playlsit as mp3 or mp4
 
 ------------
-DISCLAIMER
-------------
-This script is only for educational purpose, downloading YouTube video is AGAINST copyright and YouTube's terms. I do not take any responsibility for your usage.
+**DISCLAIMER:**
+This script is only for **educational purpose**, downloading YouTube video is **AGAINST** copyright and YouTube's terms. **The autor of this tool do not take any responsibility** for your usage.
 
 -----------
-ATTENTION
------------
-This script is usable with python 3.9.x 
-If you have a newer version you can use pyenv to create a python venv with older pythons's versions
+## USAGE
+This script is surely usable with the elencated versions of Python which i have tested on my own, if you have a different version of python you can try to use the tool but it may not function properly 
 
 
 ------------
