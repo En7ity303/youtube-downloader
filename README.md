@@ -8,31 +8,40 @@ This is a python script which download youtube video and playlsit as mp3 or mp4
 **DISCLAIMER:**
 This script is only for **educational purpose**, downloading YouTube video is **AGAINST** copyright and YouTube's terms. **The autor of this tool do not take any responsibility** for your usage.
 
+
+------------
+## INSTALLATION ⚙️
+1. Install python (preferably one of the indicated versions) if your systemn does not already have python
+
+2. Download or clone the repository:
+
+    `git clone https://github.com/En7ity303/youtube-downloader.git`
+
+3. Install the requirements:
+
+    `pip3 install -r requirements.txt`
+
+4. You are ready to use the program
+
+
 -----------
-## USAGE
+## USAGE 🔧
 This script is surely usable with the elencated versions of Python which i have tested on my own, if you have a different version of python you can try to use the tool but it may not function properly 
 
+-----------
+You can choose to download a video or a playlist
+<p align="center">
+<img align="center" src="img/img1" width="400">
+</p>
 
-------------
-FOR LINUX (ubunut debian based, for everyone else you need to change the package manager name)
-1) You need to install python3 (sudo apt install python3) and python 3 pip (sudo apt install python3-pip) and install python venv (sudo apt install python3-venv)
+And you can choose to download in mp3 or mp4 format after you have insert the youtube link
+<p align="center">
+<img align="center" src="img/img2" width="400">
+</p>
 
-2) Now you should create a dyrectory which will have the python script directory, the venv directory (python virtual environment which we will create after) and the pytube library directory
+## ATTENTION ⚠️🚨
+Now there is a problem with pytube 15.0.0 I sugest to momentary use older versions of pytube such as 12.1.3 trought this command:
 
-3) Now you need to create the virtual environment for python (python3 -m venv "put here the dyrectory location")
+`pip3 install pytube==12.1.3`
 
-4) Now you need to git clone the pytube library code in its directory (git clone https://github.com/pytube/pytube.git)
-
-5) Now you need to activate the python virtual  environment (source "put here the venv directory location"/bin/activate)
-
-6) Now you need to install the pytube library on the python venv, go with your terminal in the pytube directory and use the command "python3 -m pip install ."
-
-7) Now you are ready to execute the python script, go with you terminal in the python script directory and execute it (python3 main.py)
-
-
-------------
-FOR WINDOWS
-1) You have to install python 3, you can install it by the microsoft store
-1) You need to install pytube and pydub, open the cmd as administrator and put the command "pip install pytube pydube"
-2) Now download the main.py file for the repository and you are ready to execute the python script
-------------
+if you really want to use the version 15.0.0 you must follow this guide https://github.com/pytube/pytube/issues/1712
