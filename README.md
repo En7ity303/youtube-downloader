@@ -1,6 +1,9 @@
 # Youtube Downloader ![Youtube](https://cms.autocarpro.in/images/youtube-logo.png)
 ![Python3.9.x](https://img.shields.io/badge/Python-3.9.X-green)
-![python 3.11.8](https://img.shields.io/badge/Python-3.11.8-green)
+![Python3.10.x](https://img.shields.io/badge/Python-3.10.x-green)
+![python 3.11.x](https://img.shields.io/badge/Python-3.11.x-green)
+![python 3.12.x](https://img.shields.io/badge/Python-3.12.x-orange)
+
 
 This is a python script which download youtube video and playlsit as mp3 or mp4
 
@@ -45,3 +48,6 @@ Now there is a problem with pytube 15.0.0 I sugest to momentary use older versio
 `pip3 install pytube==12.1.3`
 
 if you really want to use the version 15.0.0 you must follow this guide https://github.com/pytube/pytube/issues/1712
+
+## ATTENTION ⚠️🚨
+Now there is an issue with python 3.12.X on macOS system so if you have a macOS device you must use 3.11.8 or above 
