@@ -6,7 +6,7 @@ from pydub import *
 from src import art
 from src import downloader
 from src import txtcolors
-from src import path
+from src import file
 
 #This sofwtare is for EDUCATIONAl PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
@@ -62,26 +62,36 @@ def video():
     if ext=="mp4" or ext=="2":
         downloader.Downloadmp4(video)
 
-
+##  MAIN  ##
 disc()
 flag_pl=False
 
 while True:
     while True:
         txtcolors.clear()
-        ans=input("Press 'm' to modify the path where the files are downloaded\nPress 'p' to show the current file download path\nPress 's' to start the program\n\n>>>")
+        ans=input("Press 'm' to modify the path where the files are downloaded\nPress 'r' to modify the default resolution\nPress 'p' to show the current file download path\nPress 's' to start the program\nPress 'e' for close the program\n\n>>>")
 
         if ans=='m':
             txtcolors.clear()
-            path.new_path()
+            file.new_path()
         
         elif ans=='p':
             txtcolors.clear()
-            print("The actual path is:\n\n\n>\t"+path.show_path()+"\t\t<")
+            print("The actual path is:\n\n\n>\t"+file.show_path()+"\t\t<")
             input("\n\nPress enter to go ahead\n>>>")
+        
+        elif ans=='r':
+            txtcolors.clear()
+            file.new_res()
         
         elif ans=='s':
             break
+            
+        elif ans=='e':
+            txtcolors.totcls()
+            input(txtcolors.warn("Have a nice day!"))
+            txtcolors.totcls()
+            quit()
 
 
     x="."
