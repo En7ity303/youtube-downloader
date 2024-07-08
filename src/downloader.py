@@ -31,8 +31,6 @@ def convert(toconvert, path):
     
 
 def Downloadmp3(video):
-
-    flag=False
     print(txtcolors.warn("Attempting to download: '"+video.title+".mp3'"))
 
 #    the following line is to allow you to save the file in a different directory
@@ -50,18 +48,13 @@ def Downloadmp3(video):
         os.remove(new_file)
                                          #this one delete the mp4 file
         txtcolors.clear()
+        print(txtcolors.ok("Download of: '"+video.title+"' is completed successfully"))
+
     except:
         print(txtcolors.fail("An error has occurred, download of: '"+video.title+"' has failed"))
         list.insert(0, video.title)
-        flag=True
-
-    if flag==False:
-        print(txtcolors.ok("Download of: '"+video.title+"' is completed successfully"))
-
-
 
 def Downloadmp4(video):
-    flag=False
     print(txtcolors.warn("Attempting to download: '"+video.title+".mp4'"))
 
     try:
@@ -72,10 +65,8 @@ def Downloadmp4(video):
         new_file=base+'.mp4'
         os.rename(out_file, new_file)
         txtcolors.clear()
+        print(txtcolors.ok("Download of: '"+video.title+"' is completed successfully"))
+
     except:
         print(txtcolors.fail("An error has occurred, download of: '"+video.title+"' has failed"))
         list.insert(0, video.title)
-        flag=True
-
-    if flag==False:
-        print(txtcolors.ok("Download of: '"+video.title+"' is completed successfully"))
