@@ -48,11 +48,10 @@ After you have started the program you can choose to download a video or a playl
 
 After you have insert the url you can choose the format you wanna download the files into:
 <p align="center">
-<img align="center" src="img/img3" width="600>
+<img align="center" src="img/img3" width="600">
 </p>
-    
-------------
---------
+
+
 ## ATTENTION ⚠️🚨
 Now there is a problem with pytube 15.0.0 I sugest to momentary use older versions of pytube such as 12.1.3 trought this command:
 
