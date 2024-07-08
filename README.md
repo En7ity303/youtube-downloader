@@ -37,18 +37,18 @@ This script is surely usable with the elencated versions of Python which i have 
 -----------
 The starting interface of the program allow you to choose some settings, the fisrt one allow you to choose the path where to download the file, the second one let you see the current download path wich is by default setted to '.' which means the files are going to be dowloaded in the same folder in which is located the programm, the tird option starts the program
 <p align="center">
-<img align="center" src="img/img1" width="600">
+<img align="center" src="img/img1.png" width="600">
 </p>
 
 After you have started the program you can choose to download a video or a playlist
 <p align="center">
-<img align="center" src="img/img2" width="600">
+<img align="center" src="img/img2.png" width="600">
 </p>
 
 
 After you have insert the url you can choose the format you wanna download the files into:
 <p align="center">
-<img align="center" src="img/img3" width="600">
+<img align="center" src="img/img3.png" width="600">
 </p>
 
 
