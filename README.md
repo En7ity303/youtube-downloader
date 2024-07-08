@@ -51,7 +51,19 @@ After you have insert the url you can choose the format you wanna download the f
 <img align="center" src="img/img3.png" width="600">
 </p>
 
+-----------
+## TASK LIST
+### JUST DID IT
+- [x] Allow to choose the format
+- [x] Allow to choose the path of the downloads
+- [x] Allow to choose from basic resolution
+- [x] In application mp4 to mp3 convertion
+### TO DO
+- [ ] Allow to choose the specific resolution for each video
+- [ ] Add a reset button for all the settings
+- [ ] Improve the code for choosing the commands
 
+-----------
 ## ATTENTION ⚠️🚨
 Now there is a problem with pytube 15.0.0 I sugest to momentary use older versions of pytube such as 12.1.3 trought this command:
 
