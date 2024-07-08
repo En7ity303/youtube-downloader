@@ -53,7 +53,7 @@ After you have insert the url you can choose the format you wanna download the f
 
 -----------
 ## TASK LIST
-### JUST DID IT
+### ALREADY DONE
 - [x] Allow to choose the format
 - [x] Allow to choose the path of the downloads
 - [x] Allow to choose from basic resolution
