@@ -35,16 +35,24 @@ This script is only for **educational purpose**, downloading YouTube video is **
 This script is surely usable with the elencated versions of Python which i have tested on my own, if you have a different version of python you can try to use the tool but it may not function properly 
 
 -----------
-You can choose to download a video or a playlist
+The starting interface of the program allow you to choose some settings, the fisrt one allow you to choose the path where to download the file, the second one let you see the current download path wich is by default setted to '.' which means the files are going to be dowloaded in the same folder in which is located the programm, the tird option starts the program
 <p align="center">
-<img align="center" src="img/img1" width="400">
+<img align="center" src="img/img1" width="600">
 </p>
 
-And you can choose to download in mp3 or mp4 format after you have insert the youtube link
+After you have started the program you can choose to download a video or a playlist
 <p align="center">
-<img align="center" src="img/img2" width="400">
+<img align="center" src="img/img2" width="600">
 </p>
 
+
+After you have insert the url you can choose the format you wanna download the files into:
+<p align="center">
+<img align="center" src="img/img3" width="600>
+</p>
+    
+------------
+--------
 ## ATTENTION ⚠️🚨
 Now there is a problem with pytube 15.0.0 I sugest to momentary use older versions of pytube such as 12.1.3 trought this command:
 
