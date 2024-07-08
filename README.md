@@ -35,7 +35,8 @@ This script is only for **educational purpose**, downloading YouTube video is **
 This script is surely usable with the elencated versions of Python which i have tested on my own, if you have a different version of python you can try to use the tool but it may not function properly 
 
 -----------
-The starting interface of the program allow you to choose some settings, the fisrt one allow you to choose the path where to download the file, the second one let you see the current download path wich is by default setted to '.' which means the files are going to be dowloaded in the same folder in which is located the programm, the tird option starts the program
+The starting interface of the program allow you to choose some settings, the first one allow you to choose the path where to download the files, the second one allow you to choose the resolution for the mp4 to download,the tird one let you see the current download path wich is by default setted to '.' which means the files are going to be dowloaded in the same folder in which is located the programm, the fourth option starts the program, the fifth option close the programm
+
 <p align="center">
 <img align="center" src="img/img1.png" width="600">
 </p>
