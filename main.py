@@ -69,7 +69,7 @@ flag_pl=False
 while True:
     while True:
         txtcolors.clear()
-        ans=input("Press 'm' to modify the path where the files are downloaded\nPress 'r' to modify the default resolution\nPress 'p' to show the current file download path\nPress 's' to start the program\nPress 'e' for close the program\n\n>>>")
+        ans=input("Press 'm' to modify the path where the files are downloaded\nPress 'r' to modify the default resolution\nPress 'p' to show the current file download path\nPress 'x' to reset all the settings\nPress 's' to start the program\nPress 'e' to close the program\n\n>>>")
 
         if ans=='m':
             txtcolors.clear()
@@ -83,6 +83,15 @@ while True:
         elif ans=='r':
             txtcolors.clear()
             file.new_res()
+        
+        elif ans=='x':
+            while True:
+                txtcolors.clear()
+                res=input("Do you really want to restore all settings?\n\n>>>")
+                if res=='1' or res=="yes" or res=="Yes" or res=="YES" or res=="y":
+                    file.panic()
+                    break
+                break
         
         elif ans=='s':
             break
@@ -118,6 +127,3 @@ while True:
 
         break
     txtcolors.clear()
-
-input(txtcolors.warn("\n\nHave a nice day!"))
-txtcolors.totcls()
