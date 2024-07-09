@@ -59,9 +59,10 @@ After you have insert the url you can choose the format you wanna download the f
 - [x] Allow to choose the path of the downloads
 - [x] Allow to choose from basic resolution
 - [x] In application mp4 to mp3 convertion
+- [x] Add a reset button for all the settings
+
 ### TO DO
 - [ ] Allow to choose the specific resolution for each video
-- [ ] Add a reset button for all the settings
 - [ ] Improve the code for choosing the commands
 
 -----------
