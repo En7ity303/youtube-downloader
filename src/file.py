@@ -1,9 +1,24 @@
 import os
 
-def path():
-    file=open("path.txt",'r')
-    path=file.read()
+to_path = "path.txt"
+to_res = "resolution.txt"
+
+def read(path):
+    file = open(path,'r')
+    doc = file.read()
     file.close()
+    
+    return doc
+   
+   
+def write(path, ins):
+    file = open(path, 'w')
+    file.write(ins)
+    file.close()
+    
+    
+def path():
+    path = read(to_path)
     
     if path=='':
         return '.'
@@ -11,29 +26,24 @@ def path():
 
 
 def new_path():
-    path = open("path.txt",'w')
-    path.write(input("Insert the path (if you don't know press '.'):\n\n>>>"))
-    path.close()
+    path = write(to_path, input("Insert the path (if you don't know press '.'):\n\n>>>"))
+
 
 def show_path():
-    file=open("path.txt", 'r')
-    path=file.read()
-    file.close()
-    return path
+    return read(to_path)
     
         
 def is_res():
-    file=open("resolution.txt",'r')
-    res=file.read()
-    file.close()
-    
+    res = read(to_res)
+        
     if res=='2' or res=='lowest' or res=='Lowest' or res=='LOWEST':
         return True
     return False
     
 def new_res():
-    file=open("resolution.txt",'w')
-    file.write(input("Insert the designated resolution (default to Highest):\n> Highest avaible\n> Lowest avaible\n\n>>>"))
-    file.close()
-
+    write(to_res, input("Insert the designated resolution (default to Highest):\n> Highest avaible\n> Lowest avaible\n\n>>>"))
     
+
+def panic():
+    write(to_path, '.')
+    write(to_res, '.')
