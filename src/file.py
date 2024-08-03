@@ -1,7 +1,7 @@
 import os
-
 to_path = "path.txt"
 to_res = "resolution.txt"
+
 
 def read(path):
     file = open(path,'r')
@@ -47,3 +47,24 @@ def new_res():
 def panic():
     write(to_path, '.')
     write(to_res, '.')
+
+
+def panic(val):
+    if val==1:
+        write(to_path, '.')
+    
+    if val==2:
+        write(to_res, '.')
+
+
+def verify():
+    try:
+        read(to_path)
+    except:
+        panic(1)
+    
+    try:
+        read(to_res)
+    except:
+        panic(2)
+        
