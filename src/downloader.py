@@ -1,5 +1,5 @@
-from pytube import YouTube
-from pytube import Playlist
+from pytubefix import YouTube
+from pytubefix import Playlist
 import os
 from pydub import *
 from src import txtcolors
