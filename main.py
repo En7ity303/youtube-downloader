@@ -2,7 +2,7 @@ from pytubefix import YouTube, Playlist
 import os
 from sys import platform
 from pydub import *
-from src import art, downloader, txtcolors, cmd
+from src import art, downloader, txtcolors, cmd, file
 
 #This sofwtare is for EDUCATIONAl PURSPOSE ONLY, the author do not take any responsibility for your use, downloading youtube content is againts the copyright and against youtube terms
 
@@ -53,6 +53,7 @@ def video():
 
 ##  MAIN  ##
 disclaimer()
+file.verify()
 flag_pl=False
 
 while True:
@@ -74,7 +75,7 @@ while True:
                 video()
                 ans=input("\nDo you wanna download another video?\n>>>")
                 if ans=='nope' or ans=='no' or ans=='No' or ans=='Nope' or ans=='nop':
-                    recursive==False
+                    recursive=False
                 txtcolors.clear()
     
             if x=="Playlist" or x=="playlist" or x=="pl" or x=="2":
